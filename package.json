@@ -1,7 +1,28 @@
 {
-    "name": "Reston",
-    "version": "0.1.0",
-    "description": "An improved HTTP client library for node.js",
-    "contributors": [{ name: "Zohaib Sibt-e-Hassan", email: "zohaib.hassan@gmail.com" }],
-    "homepage": "https://github.com/maxpert/Reston"
+  "name": "Reston",
+  "version": "0.1.0",
+  "description": "An improved HTTP client library for node.js",
+  "contributors": [
+    "Zohaib Sibt-e-Hassan <zohaib.hassan@gmail.com>"
+  ],
+  "homepage": "https://github.com/maxpert/Reston",
+  "engines": {
+    "node": ">=0.2.5"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "modules": {
+    "MultipartWriter.js": "lib/MultipartWriter.js",
+    "Reston.js": "lib/Reston.js",
+    "FileStream.js": "lib/FileStream.js",
+    "Core.js": "lib/Core.js",
+    "deps/uuid.js": "lib/deps/uuid.js",
+    "index.js": "test.js"
+  },
+  "files": [
+    ""
+  ],
+  "repository": "git://github.com/maxpert/Reston.git",
+  "author": "Zohaib Sibt-e-Hassan (http://maxpert.net.tc/)"
 }
