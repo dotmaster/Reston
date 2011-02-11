@@ -1,5 +1,5 @@
-Reston 0.1.0
-===========
+Reston 0.1.1
+============
 
 MIT Licensed, (C) Zohaib Sibt-e-Hassan 2011
 
