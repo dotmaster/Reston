@@ -22,50 +22,8 @@ var request_object = function(method, address, headers){
 
 var data = 'a=hello&b=world';
 
-var req = Reston.post('http://localhost/test1.php');
+var req = Reston.get('http://www.google.co.uk/');
 req.on('data', function(c){
 	console.log(c.toString());
 });
-req.sendMultiPart({
-	'file': new FileStream('/home/mxp/Downloads/1430225297ASPn.rar'),
-	'data': 'more data here'
-}); 
-
-/*
-var req = request_object('PUT', 'http://localhost/test1.php', {
-	'Content-Type': 'application/x-www-form-urlencoded',
-	'Content-Length': data.length});
-
-req.on('response', function(resp){
-	console.log(resp.statusCode);
-	resp.on('data', function(chunk){
-		console.log(chunk.toString());
-	});
-});
-req.write(data);
-req.end();
-
-var fl = new FileStream('/home/mxp/Downloads/1430225297ASPn.rar'),
-	mw = new MultipartWriter({'filename': fl, 'name': 'zohaib'});
-
-
-var req = request_object('POST', 'http://localhost/test1.php', mw.headers());
-
-req.on('response', function(resp){
-	console.log(resp.statusCode);
-	resp.on('data', function(chunk){
-		console.log(chunk.toString());
-	});
-});
-
-mw.writebody(req);
-mw.on('complete', function(){
-	req.end();
-});
-
-fl.on('error', function(err){
-	console.log("Error...");
-	console.log(err);
-});
-*/
-
+req.send();
