@@ -1,0 +1,7 @@
+{
+    "name": "Reston",
+    "version": "0.1",
+    "description": "An improved HTTP client library for node.js",
+    "contributors": [{ name: "Zohaib Sibt-e-Hassan", email: "zohaib.hassan@gmail.com" }],
+    "homepage": "https://github.com/maxpert/Reston"
+}
