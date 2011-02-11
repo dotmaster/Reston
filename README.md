@@ -141,3 +141,13 @@ DEL request with querystring+data as well:
 	var data = {};
 	data.b = 5;
 	req.send(data); // Makes a delete request Sends a=1, b=5, c=3 (look how it overrides the data for b)
+
+### Events
+
+Following events are triggered on Reston object:
+
+* 'start' when response from server starts: function(resp){} //where response is clientResponse object
+* 'data' triggered when response data: function(chunk){} //chunk the buffer of recieved chunk
+* 'complete' triggered when respone is completed
+* 'success' if the response code is between 200 to 299
+* 'error' if response code is other than success codes
