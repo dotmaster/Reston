@@ -1,6 +1,6 @@
 {
   "name": "Reston",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "An improved HTTP client library for node.js",
   "contributors": [
     "Zohaib Sibt-e-Hassan <zohaib.hassan@gmail.com>"

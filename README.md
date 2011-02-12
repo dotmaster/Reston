@@ -1,4 +1,5 @@
-Reston 0.1.1
+* Please use the 0.1.1 for production purposes; 0.2.0 has a unstable API yet *
+Reston 0.2.0
 ============
 
 MIT Licensed, (C) Zohaib Sibt-e-Hassan 2011
@@ -47,7 +48,8 @@ Creates a basic put request, e.g. Reston.put('http://place-to-put.com/update/');
 Creates a basic delete request, e.g. Reston.del('http://localhost/bye-bye/');
 *URL must be properly formated i.e. must start with http:// (Currently only supports http, https coming soon)*
 
-### new Reston.file(path_to_file, options)
+### new Reston.file(path_to_file, options) // To be depriciated in 0.3
+### new Reston.File(path_to_file, options)
 
 *path_to_file* is absolute path to file.
 *options* JSON object with following properties 
@@ -65,7 +67,7 @@ the created object in turn as data can be passed to sendMultiPart method of crea
 		console.log('boooo!');
 	});
 	var data = {};
-	data.my_file_name = new Reston.file('/home/myname/file.zip');
+	data.my_file_name = new Reston.File('/home/myname/file.zip');
 	data.some_other_field = 'Data';
 	data.more_data  = 'text data here';
 	req.sendMultiPart(data);
@@ -75,6 +77,12 @@ the created object in turn as data can be passed to sendMultiPart method of crea
 Sets header to be sent in the request; does what's written on box!
 * Word of caution * Just dont try to mess around with headers like Host, Content-Length because it will propogate the set headers without any filters; so remember the rule; with great power comes great responsibility!
 
+### setRequestHeaders(headers)
+
+Sets headers to be sent in the request from given associative pairs of JSON object; does what's written on box!
+* Word of caution * Just dont try to mess around with headers like Host, Content-Length because it will propogate the set headers without any filters; so remember the rule; with great power comes great responsibility!
+
+	req.setRequestHeaders({"User-Agent": "Not IE!"});
 
 ### send(data)
 
@@ -85,6 +93,12 @@ Send a simple get/post/put/del request automatically determining the query strin
 ### sendMultiPart(data)
 
 Make a multipart submission of POST/PUT request only; data specs remain the same as _send_ but adds acceptance for Reston.file object for file streaming.
+
+### Reston.util.authorize_basic(username, password)
+
+Generates a basic authorization header that in turn can be passed to setRequestHeaders, example
+	
+	request.setRequestHeaders(Reston.util.authorize_basic("foo", "bar"));
 
 ### Examples:
 

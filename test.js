@@ -20,10 +20,10 @@ var request_object = function(method, address, headers){
 	}
 };
 
-var data = 'a=hello&b=world';
+var data = '';
 
-var req = Reston.get('http://www.google.co.uk/');
+var req = Reston.get('http://search.twitter.com/search.json');
 req.on('data', function(c){
 	console.log(c.toString());
 });
-req.send();
+req.send({q: 'nodejs'});
