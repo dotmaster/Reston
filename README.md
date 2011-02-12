@@ -146,7 +146,7 @@ DEL request with querystring+data as well:
 
 Following events are triggered on Reston object:
 
-* 'start' when response from server starts: function(resp){} //where response is clientResponse object
+* 'start' when response from server starts: function(resp, req){} //where response is clientResponse object and req is ClientRequest object
 * 'data' triggered when response data: function(chunk){} //chunk the buffer of recieved chunk
 * 'complete' triggered when respone is completed
 * 'success' if the response code is between 200 to 299
