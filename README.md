@@ -1,4 +1,4 @@
-* Please use the 0.1.1 for production purposes; 0.2.0 has a unstable API yet *
+*Please use the 0.1.1 for production purposes; 0.2.0 has a unstable API yet*
 Reston 0.2.0
 ============
 
