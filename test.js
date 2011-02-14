@@ -23,7 +23,11 @@ var request_object = function(method, address, headers){
 var data = '';
 
 var req = Reston.get('http://search.twitter.com/search.json');
-req.on('data', function(c){
-	console.log(c.toString());
+var rep_ac = new Reston.Accumulator(req, 'utf8');
+req.on(Reston.Events.Success, function(c){
+	console.log(rep_ac.data);
+});
+req.on(Reston.Events.Error, function(){
+	console.log("Something went wrong");
 });
 req.send({q: 'nodejs'});
