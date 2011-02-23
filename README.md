@@ -31,7 +31,7 @@ Basic method to make a get request object, example:
 
 	req.send(); //Sends a simple get Request
 
-*URL must be properly formated i.e. must start with http:// (Currently only supports http, https coming soon)*
+* URL must be properly formated i.e. must start with http:// or https:// (https wont work for older versions of node works perfect with 0.4.0+)*
 
 ### Reston.post(url)
 
@@ -155,6 +155,20 @@ DEL request with querystring+data as well:
 	var data = {};
 	data.b = 5;
 	req.send(data); // Makes a delete request Sends a=1, b=5, c=3 (look how it overrides the data for b)
+
+### Utilties
+
+Yep they are the cherry on top
+
+ * Reston.accumulate(restonObject, encoding) accumulates response for you
+
+	var req = Reston.get('http://localhost/data.php?a=1&b=2&c=3');
+	var acc = Reston.accumulate(req, 'utf-8');
+	req.on('end', function(){
+		console.log(acc.data); // Body or response
+		console.log(acc.headers); // Headers of response
+	});
+
 
 ### Events
 
